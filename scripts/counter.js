@@ -2,7 +2,7 @@ let input = document.querySelectorAll('textarea')[0],
     characterCount = document.querySelector('#characterCount'),
     wordCount = document.querySelector('#wordCount');
 
-const puncutations = [".", ",", ":", "!", "?", " "];
+const puncutations = [".", ",", ";", ":", "!", "?", " "];
 
 input.addEventListener('keyup', function() {
     console.clear();
