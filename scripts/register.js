@@ -76,16 +76,17 @@ function storeUserData(user) {
 }
 
 function isUserInputEmpty(user) {
-    if (user.firstname === ""
-    || user.lastname === ""
-    || user.username === ""
-    || user.email === ""
-    || user.password === "") {
-        return true;
+    if (user.firstname === ''
+    || user.lastname === ''
+    || user.username === ''
+    || user.email === ''
+    || user.password === '') {
         console.log('UserInputEmpty = true');
+        err.innerHTML = 'Bitte f&uuml;llen Sie alle Felder aus';
+        return true;
     }
-    return false;
     console.log('UserInputEmpty = false');
+    return false;
 }
 
 function getUserDataFromStorage() {

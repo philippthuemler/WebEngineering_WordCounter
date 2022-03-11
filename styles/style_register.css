@@ -50,3 +50,9 @@
     background-color: rgb(75, 75, 75);
     color: white;
 }
+#error-msg {
+    color: red;
+}
+#error-msg:hover {
+    cursor: default;
+}
