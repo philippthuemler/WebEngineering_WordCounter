@@ -42,3 +42,11 @@
     background-color: rgb(75, 75, 75);
     color: white;
 }
+#submit:focus {
+    background-color: rgb(75, 75, 75);
+    color: white;
+}
+#reset:focus {
+    background-color: rgb(75, 75, 75);
+    color: white;
+}

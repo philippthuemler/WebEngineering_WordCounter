@@ -36,7 +36,7 @@
             </nav>
         </header>
         <main>
-            <form action="./login.html" method="post">
+            <form action="#" method="get">
                 <div class="register-container">
                     <input type="text" id="firstname" name="firstname" size="20" maxlength="250" placeholder="Vorname" autofocus required>
                     <input type="text" id="lastname" name="lastname" size="20" maxlength="250" placeholder="Nachname" required>
@@ -45,6 +45,7 @@
                     <input type="password" id="password" name="password" size="20" maxlength="250" placeholder="Passwort" required>
                     <input type="reset" id="reset" name="reset" value="Werte&nbsp;l&ouml;schen">
                     <input type="submit" id="submit" name="submit" value="Registrieren">
+                    <div id="error-msg"></div>
                 </div>
             </form>
         </main>
@@ -52,7 +53,6 @@
 
         </footer>
 
-        
-        <script src="./script/register_script.js"></script>
+        <script src="./scripts/register.js"></script>
     </body>
 </html>

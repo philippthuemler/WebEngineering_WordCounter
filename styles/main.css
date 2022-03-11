@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    color: black;
+}
+
 .bg-image {
     background-image: url('../images/login_bg-image.jpg');
     background-size: cover;
