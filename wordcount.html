@@ -10,11 +10,11 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-        <title>Registrieren</title>
+        <title>Counter</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./styles/main.css" type="text/css">
-        <link rel="stylesheet" href="./styles/style_register.css" type="text/css">
+        <link rel="stylesheet" href="./styles/style_counter.css" type="text/css">
         <link rel="icon" href="./icons/w-icon.png" type="image/png">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     </head>
@@ -36,23 +36,19 @@
             </nav>
         </header>
         <main>
-            <form action="./login.html" method="post">
-                <div class="register-container">
-                    <input type="text" id="firstname" name="firstname" size="20" maxlength="250" placeholder="Vorname" autofocus required>
-                    <input type="text" id="lastname" name="lastname" size="20" maxlength="250" placeholder="Nachname" required>
-                    <input type="text" id="username" name="username" size="20" maxlength="250" placeholder="Benutzername" required>
-                    <input type="text" id="email" name="email" size="20" maxlength="250" placeholder="Email" required>
-                    <input type="password" id="password" name="password" size="20" maxlength="250" placeholder="Passwort" required>
-                    <input type="reset" id="reset" name="reset" value="Werte&nbsp;l&ouml;schen">
-                    <input type="submit" id="submit" name="submit" value="Registrieren">
+            <div class="text-container">
+                <textarea placeholder="Text eingeben..."></textarea>
+                <div class="counter-output">
+                    <div>Zeichen: <span id="characterCount">0</span></div>
+                    <div>Worte: <span id="wordCount">0</span></div>
                 </div>
-            </form>
+            </div>
         </main>
+
         <footer>
 
         </footer>
 
-
-        <script src="./script/register_script.js"></script>
+        <script src="./scripts/counter.js"></script>
     </body>
 </html>
