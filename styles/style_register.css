@@ -50,9 +50,41 @@
     background-color: rgb(75, 75, 75);
     color: white;
 }
+#submit:active {
+    background-color: rgb(45, 45, 45);
+    color: white;
+}
+#reset:active {
+    background-color: rgb(45, 45, 45);
+    color: white;
+}
 #error-msg {
     color: red;
+    padding: 5px 10%;
 }
 #error-msg:hover {
     cursor: default;
+}
+footer {
+    position: absolute;
+    bottom: 2em;
+    left: 3em;
+}
+footer a {
+    color: black;
+    font-size: 1.2em;
+    border-bottom: #00000000 solid 2px;
+    transition: all 0.2s ease-in-out;
+}
+footer a:link {
+    text-decoration: none;
+    color: black;
+}
+footer a:visited {
+    text-decoration: none;
+    color: black;
+}
+footer a:hover {
+    cursor: pointer;
+    border-bottom: #000000FF solid 2px;
 }
