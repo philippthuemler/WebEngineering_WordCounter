@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="./styles/main.css" type="text/css">
         <link rel="stylesheet" href="styles/style_login.css" type="text/css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.12.0/js/md5.min.js"></script>
     </head>
     <body>
         <div class="bg-image"></div>
@@ -42,6 +43,7 @@
                     <input type="text" id="username" name="username" size="20" maxlength="250" placeholder="Benutzername" autofocus required>
                     <input type="password" id="password" name="password" size="20" maxlength="250" placeholder="Passwort" required>
                     <input type="submit" id="submit" name="submit" value="anmelden">
+                    <div id="error-msg"></div>
                     <p id="register">
                         Oder&nbsp;<a href="./register.html">hier&nbsp;registrieren</a>
                     </p>

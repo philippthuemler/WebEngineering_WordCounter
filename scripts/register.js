@@ -1,19 +1,19 @@
 
-const namePattern = /([A-Z]|Ä|Ö|Ü)([a-z]|ä|ö|ü|ß)+/;
-const usernamePattern = /([a-z]|[A-Z]|[0-9]|\.|-|_)*/;
-const emailPattern = /^([a-z]|[A-Z]|[0-9]|\.|_|-)*@([a-z]|[A-Z]|[0-9]|-)*\.([a-z]){2,3}$/;
+const namePattern = /([A-Z]|Ä|Ö|Ü)([a-z]|ä|ö|ü|ß)+/g;
+const usernamePattern = /([a-z]|[A-Z]|[0-9]|\.|-|_)+/g;
+const emailPattern = /^([a-z]|[A-Z]|[0-9]|\.|_|-)*@([a-z]|[A-Z]|[0-9]|-)*\.([a-z]){2,3}$/g;
 let err = document.getElementById('error-msg');
 err.style.color = 'red';
 let userCount = 0;
 let userObjName = 'user';
 
 function validateUserData(input, type) {
-    switch(type) {
+    switch (type) {
         case ('firstname'):
             // firstname validation
             if(input.match(namePattern))
                 return true;
-                break;
+            break;
         case ('lastname'):
             // lastname validation
             if(input.match(namePattern))
@@ -41,6 +41,7 @@ function validateUserData(input, type) {
 function validateUser(user) {
     let isUserValid = [];
     let inputInvalidMsg = '';
+    console.clear();
     for (let [key, value] of Object.entries(user)) {
         if (validateUserData(value, key)) {
             console.log(`${key}: Ok`);
@@ -79,6 +80,7 @@ function getUserData() {
 }
 
 function storeUserData(user) {
+    user.password = md5(user.password);
     const userSerialized = JSON.stringify(user);
     userCount++;
     userObjName = userObjName.slice(0, 4);
@@ -119,11 +121,11 @@ function iterateUsers() {
 }
 
 function userExist(user) {
-    if(!(localStorage.length === 0)) {
+    if (!(localStorage.length === 0)) {
         for (let i = 0; i < localStorage.length; i++) {
             const key = localStorage.key(i);
             const userObject = getUserObject(key);
-            if(userObject.username === user.username || userObject.email === user.email) {
+            if (userObject.username === user.username || userObject.email === user.email) {
                 console.log('User already exists');
                 err.innerHTML = 'Benutzer existiert bereits';
                 return true;
@@ -145,13 +147,13 @@ function init() {
         err.style.color = 'red';
         const user = getUserData();
         if (!isUserInputEmpty(user)) {
-            if (validateUser(user))
+            if (validateUser(user)) {
                 if(!userExist(user)) {
                     storeUserData(user);
                     err.style.color = 'green';
                     err.innerHTML = 'Benutzer gespeichert';
                 }
-
+            }
         }
     }, false);
 }
