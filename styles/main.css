@@ -59,3 +59,18 @@ nav {
     border-bottom: rgba(255, 165, 0, 1) solid 1px;
     cursor: pointer;
 }
+
+/* Smartphone -> max-width: 640px */
+@media only screen and (max-width: 40em) {
+
+}
+
+/* Tablets Landscape -> 640px - 1024px */
+@media only screen and (min-width: 40em) and (max-width: 64em) and (orientation: landscape){
+
+}
+
+/* Tablets Portrait -> 640px - 1024px */
+@media only screen and (min-width: 40em) and (max-width: 64em) and (orientation: portrait) {
+
+}
