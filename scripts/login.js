@@ -68,6 +68,8 @@ function init() {
                     err.style.color = 'green'
                     err.innerHTML = 'Anmeldung erfolgreich'
                     window.location.href = './wordcounter.html'
+                } else {
+                    err.innerHTML = 'Benutzername oder Passwort ist falsch'
                 }
             }
         }
