@@ -72,21 +72,21 @@ footer {
     bottom: 2em;
     left: 3em;
 }
-footer a {
+#login {
     color: black;
     font-size: 1.2em;
     border-bottom: #00000000 solid 2px;
     transition: all 0.2s ease-in-out;
 }
-footer a:link {
+#login:link {
     text-decoration: none;
     color: black;
 }
-footer a:visited {
+#login:visited {
     text-decoration: none;
     color: black;
 }
-footer a:hover {
+#login:hover {
     cursor: pointer;
     border-bottom: #000000FF solid 2px;
 }
