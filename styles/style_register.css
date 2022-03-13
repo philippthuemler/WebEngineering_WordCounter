@@ -15,6 +15,8 @@
     overflow: scroll;
     border-radius: 20px;
     box-shadow: 0px 0px 10px black;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 .register-container input {
     padding-left: 10px;
@@ -87,4 +89,49 @@ footer a:visited {
 footer a:hover {
     cursor: pointer;
     border-bottom: #000000FF solid 2px;
+}
+
+/* Smartphones -> max-width: 640px */
+@media only screen and (max-width: 40em) {
+    .register-container {
+        width: 100vw;
+        border-radius: 0px;
+        box-shadow: none;
+        transform: translate(-50%, 0%);
+        top: 300px;
+    }
+    footer {
+        display: none;
+    }
+}
+
+/* Tablets Landscape -> 640px - 1024px */
+@media only screen and (min-width: 40em) and (max-width: 64em) and (orientation: landscape) {
+    .register-container {
+        transform: translate(-50%, 0%);
+        top: 150px;
+        border-radius: 0px;
+        box-shadow: none;
+        width: 100vw;
+    }
+    .logo h3 {
+        margin-left: 1em;
+    }
+    footer {
+        display: none;
+    }
+}
+
+/* Tablets Portrait -> 640px - 1024px */
+@media only screen and (min-width: 40em) and (max-width: 64em) and (orientation: portrait) {
+    .register-container {
+        transform: translate(-50%, 0%);
+        top: 200px;
+        border-radius: 0px;
+        box-shadow: none;
+        width: 100vw;
+    }
+    footer {
+        display: none;
+    }
 }

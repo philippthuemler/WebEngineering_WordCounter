@@ -67,7 +67,7 @@ function init() {
                 if (userExist(user)) {
                     err.style.color = 'green'
                     err.innerHTML = 'Anmeldung erfolgreich'
-                    window.location.href = './wordcounter.html'
+                    window.location.href = './wordcount.html'
                 } else {
                     err.innerHTML = 'Benutzername oder Passwort ist falsch'
                 }

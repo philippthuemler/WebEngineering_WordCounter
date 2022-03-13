@@ -1,0 +1,110 @@
+#toggle-dark-mode {
+    box-sizing: content-box;
+    position: relative;
+    width: 45px;
+    height: 22px;
+    border: black solid 2px;
+    border-radius: 20px;
+    background-color: white;
+    transition: all .4s ease-in-out;
+}
+#toggle-dark-mode:before {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    left: 1px;
+    top: 1px;
+    border-radius: 50%;
+    background: black;
+    transition: all .4s ease-in-out;
+}
+#toggle-dark-mode.active:before {
+    left: 24px;
+    background: white;
+}
+#toggle-dark-mode.active {
+    /*background-color: black;*/
+    background-color: #08090A;
+    border: white solid 2px;
+}
+#toggle-dark-mode:hover {
+    cursor: pointer;
+}
+
+body.dark .bg-image {
+    background-blend-mode: darken;
+}
+
+/* Register */
+body.dark .register-container {
+    background-color: #18191A;
+}
+body.dark .register-container input {
+    background-color: #2A2B2C;
+    color: rgb(226, 226, 226);
+}
+body.dark .register-container #submit:hover {
+    background-color: #08090A;
+}
+body.dark .register-container #reset:hover {
+    background-color: #08090A;
+}
+body.dark .register-container #submit:focus {
+    background-color: #08090A;
+}
+body.dark .register-container #reset:focus {
+    background-color: #08090A;
+}
+body.dark .register-container #submit:active {
+    background-color: #020304;
+}
+body.dark .register-container #reset:active {
+    background-color: #020304;
+}
+body.dark footer a {
+    color: rgb(226, 226, 226);
+}
+body.dark footer a:hover {
+    border-bottom: rgb(226, 226, 226) solid 2px;
+}
+
+
+/* Login */
+body.dark .login-container {
+    background-color: #18191A;
+}
+body.dark .login-container input {
+    background-color: #2A2B2C;
+    color: rgb(226, 226, 226);
+}
+body.dark .login-container #submit:hover {
+    background-color: #08090A;
+}
+body.dark .login-container #submit:focus {
+    background-color: #08090A;
+}
+body.dark .login-container #submit:active {
+    background-color: #020304;
+}
+body.dark .login-container p {
+    color: rgb(226, 226, 226);
+}
+
+/* Word Counter */
+body.dark .text-container {
+    background-color: #18191A;
+}
+body.dark .text-container textarea {
+    background-color: #2A2B2C;
+    color: rgb(226, 226, 226);
+    border: #58595A solid 1px;
+}
+body.dark .counter-output {
+    background-color: #28292A;
+    border: #58595A solid 1px;
+}
+body.dark .counter-output div {
+    color: rgb(226, 226, 226);
+}
+
