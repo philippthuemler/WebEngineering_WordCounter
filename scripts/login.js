@@ -1,6 +1,5 @@
-const usernamePattern = /([a-z]|[A-Z]|[0-9]|\.|-|_)+/;
-const err = document.getElementById('error-msg');
-
+const usernamePattern = /([a-z]|[A-Z]|[0-9]|\.|-|_)+/
+const err = document.getElementById('error-msg')
 
 
 function getUserData() {
@@ -10,7 +9,7 @@ function getUserData() {
         username: username,
         password: password
     }
-    return user;
+    return user
 }
 
 function isUserInputEmpty(user) {
@@ -18,7 +17,7 @@ function isUserInputEmpty(user) {
     || user.password === '') {
         console.log('UserInputEmpty = true')
         err.innerHTML = 'Bitte f&uuml;llen Sie alle Felder aus'
-        return true;
+        return true
     }
     console.log('UserInputEmpty = false')
     return false
@@ -27,7 +26,7 @@ function isUserInputEmpty(user) {
 function validateUser(username) {
     if (username.match(usernamePattern)) {
         console.log('username: Ok')
-        return true;
+        return true
     }
     console.log('username: error')
     err.innerHTML = 'Benutzername enth&auml;lt ung&uuml;ltige Zeichen'

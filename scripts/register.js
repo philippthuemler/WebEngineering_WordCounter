@@ -13,31 +13,55 @@ function validateUserData(input, type) {
             // firstname validation
             if(input.match(namePattern))
                 return true
-            break;
+            break
         case ('lastname'):
             // lastname validation
             if(input.match(namePattern))
                 return true
-            break;
+            break
         case ('username'):
             // username validation
             if(input.match(usernamePattern))
                 return true
-            break;
+            break
         case ('email'):
             // email validation
             if(input.match(emailPattern))
                 return true
-            break;
+            break
         case ('password'):
             // password validation
             return true
-            break;
+            break
         default:
             return false
     }
 }
 
+function generateErrorMsg(key, extension = '') {
+    const errorMsg = ''
+    switch (key) {
+        case ('firstname'):
+            errorMsg += 'Vorname falsch'
+            break
+        case ('lastname'):
+            errorMsg += 'Nachname falsch'
+            break
+        case ('username'):
+            errorMsg += 'Benutzername falsch'
+            break
+        case ('email'):
+            errorMsg += 'Email falsch'
+            break
+        case ('password'):
+            errorMsg += 'Passwort falsch'
+            break
+        default:
+            errorMsg = `${key} falsch`
+            break
+    }
+    return (extension + errorMsg)
+}
 function validateUser(user) {
     let isUserValid = []
     let inputInvalidMsg = ''
@@ -50,9 +74,9 @@ function validateUser(user) {
             console.log(`${key}: error`)
             isUserValid.push(false)
             if(inputInvalidMsg === '')
-                inputInvalidMsg += `${key} falsch`
+                inputInvalidMsg = generateErrorMsg(key)
             else
-                inputInvalidMsg += `, ${key} falsch`
+                inputInvalidMsg = generateErrorMsg(key, ', ')
             err.innerHTML = inputInvalidMsg
         }
     }
@@ -132,7 +156,7 @@ function userExist(user) {
             }
         }
         console.log('User did not exist')
-        return false;
+        return false
     } else {
         console.log('No users existed')
         return false
@@ -141,11 +165,11 @@ function userExist(user) {
 
 
 function init() {
-    const submitButton = document.getElementById('submit');
+    const submitButton = document.getElementById('submit')
     submitButton.addEventListener('click', (event) => {
-        event.preventDefault();
+        event.preventDefault()
         err.style.color = 'red'
-        const user = getUserData();
+        const user = getUserData()
         if (!isUserInputEmpty(user)) {
             if (validateUser(user)) {
                 if(!userExist(user)) {
