@@ -1,33 +1,52 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    color: black;
-    transition: all .4s ease-in-out;
-    font-family: Poppins, sans-serif;
-    font-size: 1em;
-}
-
-.bg-image {
-    background: rgba(0, 0, 0, .5) url('../images/login_bg-image.jpg');
-    background-size: cover;
+nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
     width: 100%;
-    height: 100vh;
-    background-repeat: no-repeat;
+    min-height: 10vh;
+    border-bottom: rgb(5, 5, 5) solid 1px;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+}
+.logo {
+    text-transform: uppercase;
+}
+.logo h3 {
+    color: white;
+    text-decoration: none;
+    letter-spacing: 4px;
+    font-size: 2em;
+}
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 40%;
+}
+.nav-links a {
+    text-decoration: none;
+    color: orange;
+    font-size: 1.2em;
+    letter-spacing: 3px;
+    border-bottom: rgba(255, 165, 0, 0) solid 1px;
+    transition: all 0.3s ease-in-out;
+}
+.nav-links li {
+    list-style: none;
+}
+.nav-links a:hover {
+    border-bottom: rgba(255, 165, 0, 1) solid 1px;
+    cursor: pointer;
 }
 
 
 /* Smartphone -> max-width: 640px */
 @media only screen and (max-width: 40em) {
-    .bg-image {
-        /*background-image: none !important;*/
-        height: 300px;
-        position: fixed;
-    }
-    /*nav {
+    nav {
         height: 300px; 
         flex-direction: column;
         justify-content: space-around;
@@ -44,17 +63,13 @@ body {
     }
     .logo h3 {
         text-align: center;
-    }*/
+    }
 }
+
 
 /* Tablets Landscape -> 640px - 1024px */
 @media only screen and (min-width: 40em) and (max-width: 64em) and (orientation: landscape) {
-    .bg-image {
-        /*background-image: none !important;*/
-        height: 150px;
-        position: fixed;
-    }
-    /*nav {
+    nav {
         height: 150px;
     }
     .nav-links {
@@ -68,18 +83,13 @@ body {
     }
     .logo h3 {
         text-align: center;
-    }*/
+    }
 }
 
 
 /* Tablets Portrait -> 640px - 1024px */
 @media only screen and (min-width: 40em) and (max-width: 64em) and (orientation: portrait) {
-    .bg-image {
-        /*background-image: none !important;*/
-        height: 200px;
-        position: fixed;
-    }
-    /*nav {
+    nav {
         height: 200px;
     }
     .nav-links {
@@ -93,5 +103,5 @@ body {
     }
     .logo h3 {
         text-align: center;
-    }*/
+    }
 }

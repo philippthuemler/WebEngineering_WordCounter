@@ -1,6 +1,5 @@
-const usernamePattern = /([a-z]|[A-Z]|[0-9]|\.|-|_)+/;
-const err = document.getElementById('error-msg');
-
+const usernamePattern = /([a-z]|[A-Z]|[0-9]|\.|-|_)+/
+const err = document.getElementById('error-msg')
 
 
 function getUserData() {
@@ -10,7 +9,7 @@ function getUserData() {
         username: username,
         password: password
     }
-    return user;
+    return user
 }
 
 function isUserInputEmpty(user) {
@@ -18,7 +17,7 @@ function isUserInputEmpty(user) {
     || user.password === '') {
         console.log('UserInputEmpty = true')
         err.innerHTML = 'Bitte f&uuml;llen Sie alle Felder aus'
-        return true;
+        return true
     }
     console.log('UserInputEmpty = false')
     return false
@@ -27,7 +26,7 @@ function isUserInputEmpty(user) {
 function validateUser(username) {
     if (username.match(usernamePattern)) {
         console.log('username: Ok')
-        return true;
+        return true
     }
     console.log('username: error')
     err.innerHTML = 'Benutzername enth&auml;lt ung&uuml;ltige Zeichen'
@@ -46,10 +45,12 @@ function userExist(user) {
     }
     for (let i = 0; i < localStorage.length; i++) {
         const key = localStorage.key(i)
-        const userObject = getUserObject(key)
-        if (userObject.username === user.username && userObject.password === md5(user.password)) {
-            console.log('user valid')
-            return true
+        if (key.slice(0, 4) === 'user') {
+            const userObject = getUserObject(key)
+            if (userObject.username === user.username && userObject.password === md5(user.password)) {
+                console.log('user valid')
+                return true
+            }
         }
     }
     console.log('user invalid')
@@ -67,7 +68,7 @@ function init() {
                 if (userExist(user)) {
                     err.style.color = 'green'
                     err.innerHTML = 'Anmeldung erfolgreich'
-                    window.location.href = './wordcounter.html'
+                    window.location.href = './wordcount.html'
                 } else {
                     err.innerHTML = 'Benutzername oder Passwort ist falsch'
                 }

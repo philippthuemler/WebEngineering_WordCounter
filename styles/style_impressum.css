@@ -1,0 +1,124 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#dark-mode-label-container {
+    z-index: 15;
+    position: fixed;
+    top: 11.5vh;
+    left: 95vw;
+    transform: translate(-50%, 0%);
+}
+#toggle-dark-mode {
+    font-family: initial;
+    display: block;
+}
+body {
+    font-family: Poppins, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+nav {
+    z-index: 10;
+}
+#impressum {
+    border-bottom: rgba(255, 165, 0, 1) solid 1px;
+}
+main {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    justify-content: space-around;
+    top: 10vh;
+    margin: 5em auto;
+}
+main div {
+    font-size: 1em;
+    line-height: 1.5em;
+}
+.contact {
+    line-height: 1.8em;
+    font-size: 1.2em;
+}
+.name {
+    font-weight: 600;
+}
+#disclaimer {
+    margin: 15em 10% 5em 10%;
+}
+#disclaimer_heading {
+    font-weight: 500;
+    font-size: 1.5em;
+}
+#disclaimer a {
+    text-decoration: none;
+    color: blue;
+}
+#disclaimer a:visited {
+    color: blue;
+}
+#disclaimer a:hover {
+    border-bottom: blue solid 2px;
+}
+.heading {
+    line-height: 2.5em;
+    margin-top: 2em;
+    text-decoration: underline;
+    font-size: 1.1em;
+}
+footer {
+    height: 10vh;
+    width: 100%;
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+footer p {
+    margin-bottom: 20px;
+}
+
+
+/* Smartphone -> max-width: 640px */
+@media only screen and (max-width: 40em) {
+    main {
+        top: 300px;
+        justify-content: flex-start;
+    }
+    .contact {
+        margin-left: 10%;
+        margin-bottom: 2em;
+    }
+    #disclaimer {
+        margin-top: 5em;
+    }
+    
+}
+
+
+/* Tablets Landscape -> 640px - 1024px */
+@media only screen and (min-width: 40em) and (max-width: 64em) and (orientation: landscape) {
+    main {
+        top: 150px;
+    }
+    .contact {
+        margin-left: 10%;
+        margin-bottom: 2em;
+    }
+    #disclaimer {
+        margin-top: 5em;
+    }
+}
+
+
+/* Tablets Portrait -> 640px - 1024px */
+@media only screen and (min-width: 40em) and (max-width: 64em) and (orientation: portrait) {
+    main {
+        top: 200px;
+    }
+    #disclaimer {
+        margin-top: 5em;
+    }
+}

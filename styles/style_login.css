@@ -31,7 +31,7 @@
 }
 .login-container p#input_detail {
     position: absolute;
-    top: 3em;
+    top: 2em;
     left: 10%;
 }
 .login-container p#register {
@@ -48,6 +48,10 @@
 }
 #submit:focus {
     background-color: rgb(75, 75, 75);
+    color: white;
+}
+#submit:active {
+    background-color: rgb(45, 45, 45);
     color: white;
 }
 #register a {
@@ -67,4 +71,40 @@
 #register a:hover {
     border-bottom:rgba(56, 56, 255, 1) solid 2px;
     cursor: pointer;
+}
+
+/* Smartphones -> max-width: 640px */
+@media only screen and (max-width: 40em) {
+    .login-container {
+        width: 100vw;
+        border-radius: 0px;
+        box-shadow: none;
+        transform: translate(-50%, 0%);
+        top: 300px;
+    }
+}
+
+/* Tablets Landscape -> 640px - 1024px */
+@media only screen and (min-width: 40em) and (max-width: 64em) and (orientation: landscape) {
+    .login-container {
+        transform: translate(-50%, 0%);
+        top: 150px;
+        border-radius: 0px;
+        box-shadow: none;
+        width: 100vw;
+    }
+    .logo h3 {
+        margin-left: 1em;
+    }
+}
+
+/* Tablets Portrait -> 640px - 1024px */
+@media only screen and (min-width: 40em) and (max-width: 64em) and (orientation: portrait) {
+    .login-container {
+        transform: translate(-50%, 0%);
+        top: 200px;
+        border-radius: 0px;
+        box-shadow: none;
+        width: 100vw;
+    }
 }

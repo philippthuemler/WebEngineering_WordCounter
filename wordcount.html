@@ -15,6 +15,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./styles/main.css" type="text/css">
         <link rel="stylesheet" href="./styles/style_counter.css" type="text/css">
+        <link rel="stylesheet" href="./styles/darkmode.css" type="text/css">
+        <link rel="stylesheet" href="./styles/style_nav.css" type="text/css">
         <link rel="icon" href="./icons/w-icon.png" type="image/png">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     </head>
@@ -23,7 +25,7 @@
         <header>
             <nav>
                 <div class="logo">
-                    <h3>Word&nbsp;Counter&nbsp;-&nbsp;Anmelden</h3>
+                    <h3>Word&nbsp;Counter</h3>
                 </div>
                     <ul class="nav-links">
                         <li>
@@ -37,11 +39,12 @@
         </header>
         <main>
             <div class="text-container">
-                <textarea placeholder="Text eingeben..."></textarea>
+                <textarea placeholder="Text&nbsp;eingeben..."></textarea>
                 <div class="counter-output">
-                    <div>Zeichen: <span id="characterCount">0</span></div>
-                    <div>Worte: <span id="wordCount">0</span></div>
+                    <div>Zeichen:&nbsp;<span id="characterCount">0</span></div>
+                    <div>Worte:&nbsp;<span id="wordCount">0</span></div>
                 </div>
+                <label id="toggle-dark-mode"></label>
             </div>
         </main>
 
@@ -49,6 +52,7 @@
 
         </footer>
 
+        <script src="./scripts/darkmode.js"></script>
         <script src="./scripts/counter.js"></script>
     </body>
 </html>
