@@ -100,11 +100,25 @@ footer p {
 
 /* Tablets Landscape -> 640px - 1024px */
 @media only screen and (min-width: 40em) and (max-width: 64em) and (orientation: landscape) {
-
+    main {
+        top: 150px;
+    }
+    .contact {
+        margin-left: 10%;
+        margin-bottom: 2em;
+    }
+    #disclaimer {
+        margin-top: 5em;
+    }
 }
 
 
 /* Tablets Portrait -> 640px - 1024px */
 @media only screen and (min-width: 40em) and (max-width: 64em) and (orientation: portrait) {
-
+    main {
+        top: 200px;
+    }
+    #disclaimer {
+        margin-top: 5em;
+    }
 }
