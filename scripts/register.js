@@ -62,6 +62,7 @@ function generateErrorMsg(key, extension = '') {
     }
     return (extension + errorMsg)
 }
+
 function validateUser(user) {
     let isUserValid = []
     let inputInvalidMsg = ''
@@ -107,8 +108,8 @@ function storeUserData(user) {
     user.password = md5(user.password)
     const userSerialized = JSON.stringify(user)
     userCount++
-    userObjName = userObjName.slice(0, 4)
-    userObjName += userCount
+    userObjName = userObjName.slice(0, 4) + userCount
+    //userObjName += userCount
     if (!iterateUsers().includes(userObjName)) {
         console.log(userObjName)
         localStorage.setItem(userObjName, userSerialized)
@@ -148,11 +149,13 @@ function userExist(user) {
     if (!(localStorage.length === 0)) {
         for (let i = 0; i < localStorage.length; i++) {
             const key = localStorage.key(i)
-            const userObject = getUserObject(key)
-            if (userObject.username === user.username || userObject.email === user.email) {
-                console.log('User already exists')
-                err.innerHTML = 'Benutzer existiert bereits'
-                return true
+            if (key.slice(0, 4) === 'user') {
+                const userObject = getUserObject(key)
+                if (userObject.username === user.username || userObject.email === user.email) {
+                    console.log('User already exists')
+                    err.innerHTML = 'Benutzer existiert bereits'
+                    return true
+                }
             }
         }
         console.log('User did not exist')
