@@ -1,6 +1,6 @@
 
 const namePattern = /([A-Z]|Ä|Ö|Ü)([a-z]|ä|ö|ü|ß)+/g
-const usernamePattern = /([a-z]|[A-Z]|[0-9]|\.|-|_)+/g
+const usernamePattern = /^([a-z]|[A-Z]|[0-9]|\.|-|_)+$/g
 const emailPattern = /^([a-z]|[A-Z]|[0-9]|\.|_|-)*@([a-z]|[A-Z]|[0-9]|-)*\.([a-z]){2,3}$/g
 let err = document.getElementById('error-msg')
 err.style.color = 'red'
@@ -31,6 +31,7 @@ function validateUserData(input, type) {
             break
         case ('password'):
             // password validation
+            // password can be anything -> no validation
             return true
             break
         default:
@@ -39,7 +40,7 @@ function validateUserData(input, type) {
 }
 
 function generateErrorMsg(key, extension = '') {
-    const errorMsg = ''
+    let errorMsg = ''
     switch (key) {
         case ('firstname'):
             errorMsg += 'Vorname falsch'
@@ -77,10 +78,10 @@ function validateUser(user) {
             if(inputInvalidMsg === '')
                 inputInvalidMsg = generateErrorMsg(key)
             else
-                inputInvalidMsg = generateErrorMsg(key, ', ')
-            err.innerHTML = inputInvalidMsg
+                inputInvalidMsg += generateErrorMsg(key, ', ')
         }
     }
+    err.innerHTML = inputInvalidMsg
     if(!isUserValid.includes(false))
         return true
     else
@@ -108,12 +109,15 @@ function storeUserData(user) {
     user.password = md5(user.password)
     const userSerialized = JSON.stringify(user)
     userCount++
-    userObjName = userObjName.slice(0, 4) + userCount
-    //userObjName += userCount
-    if (!iterateUsers().includes(userObjName)) {
-        console.log(userObjName)
-        localStorage.setItem(userObjName, userSerialized)
-    }
+    userObjName = userObjName.slice(0, 4)
+    userObjName += userCount
+    do {
+        userCount++
+        userObjName = userObjName.slice(0, 4)
+        userObjName += userCount
+    } while (iterateUsers().includes(userObjName))
+    console.log(userObjName + 'hinzugefügt')
+    localStorage.setItem(userObjName, userSerialized)
 }
 
 function isUserInputEmpty(user) {
@@ -139,7 +143,8 @@ function getUserObject(userObjectName) {
 function iterateUsers() {
     let existingUsers = []
     for (let i = 0; i < localStorage.length; i++) {
-        existingUsers.push(localStorage.key(i))
+        if(localStorage.key(i).slice(0, 4) === 'user')
+            existingUsers.push(localStorage.key(i))
     }
     console.log(existingUsers)
     return existingUsers

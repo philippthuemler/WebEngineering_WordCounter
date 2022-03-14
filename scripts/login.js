@@ -45,7 +45,7 @@ function userExist(user) {
     }
     for (let i = 0; i < localStorage.length; i++) {
         const key = localStorage.key(i)
-        if (key.slice(ß, 4) === 'user') {
+        if (key.slice(0, 4) === 'user') {
             const userObject = getUserObject(key)
             if (userObject.username === user.username && userObject.password === md5(user.password)) {
                 console.log('user valid')
