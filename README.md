@@ -6,10 +6,10 @@
 - word counter (function)
 - word counter (design)
 - text generator
-- database
 - dark mode
 - diagrams
 - documentation
+- Web_Bewertung_ProgrammEntwurf.pdf unterschreiben
 
 ## pages
 
