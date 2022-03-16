@@ -5,7 +5,7 @@ let input = document.querySelectorAll('textarea')[0],
 input.addEventListener('keyup', function() {
     console.clear();
     characterCount.innerHTML = input.value.length;
-    let words = input.value.match(/\b[-?(\w+)?]+[".", ",", ":", ";", "!", "?", " " "\n"]/gi);
+    let words = input.value.match(/\b[-?(\w+)?]+[".", ",", ":", ";", "!", "?", " ", "\n"]/gi);
     if (words) {
         wordCount.innerHTML = words.length;
     }
